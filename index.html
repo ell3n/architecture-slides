@@ -1,13 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
 		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
-
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,31 +28,255 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
 	</head>
+
 	<body>
+
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>ARCHITECTURES</h1>
+					<h3>Introspection</h3>
+					<p>
+						<small>Edu & Elena</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>BIG BALL OF MUD</h2>
+					<p>
+						
+					</p>
+					<a>
+						<img height="430" data-src="./img/spaghetti.jpg" alt="spaghetti">
+					</a>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Layered Architecture</h2>
+						<p>
+							
+						</p>
+						<a>
+							<img height="430" data-src="./img/lasagna.jpg" alt="lasagna">
+						</a>
+					</section>
+					<section>
+						<h2>Layered Architecture</h2>
+						<a>
+							<img height="430" data-src="./img/layers.png" alt="layers">
+						</a>
+					</section>
+					
+					<section>
+						<h2>YAYS</h2>
+						<ul>
+							<li>Clear dependence structure benefits evolution
+
+								<ul>
+									<li>Segregation of concerns avoid coupling views / business / persistence</li>
+									<li>Lower layers are independent from the upper layers</li>
+									<li>Upper layers can evolve independently from the lower layers as long as the interface semantics is unchanged</li>
+									<li>Strict layering: limits propagation of change</li>
+								</ul>
+							</li>
+							<li>Reuse</li>
+						</ul>
+					</section>
+					<section>
+						<h2>NAYS</h2>
+						<ul>
+							<li>Not universally applicable</li>
+							<li>Performance (mostly for strict layering and many layers)</li>
+							<li>Coupling with data</li>
+						</ul>
+						<a href="#/2">
+							<img width="50" data-src="./img/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>SOA</h2>
+						<p>Service-oriented architecture is a style of architecture based on service. A service is a well-defined and self-contained functionality. In this architecture, different services communicate with each other to perform some activity. These services are loosely-coupled i.e., a service need not know the technical details of another service that it is interacting with. Basically, SOA consists of a service consumer and a service provider. The former requests for some service while the latter executes the service and returns the result for the request. While communicating, the service provider and the consumer both adhere to a <b>pre-defined protocol</b>.
+						</p>
+					</section>
+					<section>
+						<h2>SOA</h2>
+						<p>
+						</p>
+						<a>
+							<img height="430" data-src="./img/soa.png" alt="soa">
+						</a>
+					</section>
+					<section>
+						<h2>SOA VS LAYERED</h2>
+						<a>
+							<img height="430" data-src="./img/soa-comparison.jpg" alt="soa-comparison">
+						</a>
+					</section>
+					<section>
+						<h2>YAYS</h2>
+						<ul>
+							<li>Reusability</li>
+							<li>Maintainabilitiy</li>
+							<li>Better Scalability and availability</li>
+							<li>Platform Independent - different technologies can be used!</li>
+						</ul>
+					</section>
+					<section>
+						<h2>NAYS</h2>
+						<p>
+						<ul>
+							<li>Complex Service Management</li>
+							<li>Performance (latency)</li>
+							<li>Not recomended for Real Time Applications</li>
+						</ul>
+						</p>
+						<a href="#/3">
+							<img width="50" data-src="./img/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+				<section>
+						<h2>Dependency Inversion Principle</h2>
+						<p></p>
+				</section>
+			
+				<section>
+					<h2>Onion Architecture</h2>
+					<p>
+						<img height="430" data-src="./img/onion.jpg" alt="sonion">
+					</p>
+				</section>
+
+				<section>
+					<h2>Hexagonal</h2>
+					<p>
+						<img height="430" data-src="./img/hexagonal.png" alt="sonion">
+					</p>
+				</section>
+				<section>
+					<h2>Similitudes</h2>
+
+					<p><i>The most stable things are not dependent on less stable things that change more frequently.
+					<br />The layer more important and more stable is domain.</i>
+					<ul>
+						<li>Based on DDD principles</li>
+						<li>Independent of Frameworks. </li>
+						<li>Testable. <br />The business rules can be tested without the UI, Database, Web Server, or any other external element. </li>
+						<li>Independent of Database.</li>
+						<li>Independent of any external agency. <br />Business rules simply don’t know anything at all about the outside world. </li>
+					</ul>
+				</section>
+				<section>
+					<h2>Differences</h2>
+					<ul>
+						<li>Hexagonal focuses on Domain and ports/adapters to connect with outside</li>
+						<li>Onion focuses on Application services to connect with outside</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Subdomain segregation</h2>
+					<ul>
+						
+					</ul>
+				</section>
+				<section>
+					<h2>Layered Languages</h2>
+					<p>
+						
+					</p>
+					<a>
+						<img height="430" data-src="./img/language-layered.png" alt="language-layered">
+					</a>
+				</section>
+
+
+				<section>
+					<h2>CQRS</h2>
+						<img height="430" data-src="./img/cqrs.png" alt="cqrs">
+				</section>
+				<section>
+					<h2>Domain events</h2>
+					<ul>
+						<li>Signal that something has happened</li>
+						<li>Closely aligned to the Domain Model</li>
+						<li>Info should be minimal - avoid fat events</li>
+						<li>Are handled by a messaging system</li>
+						<li>They are in past tense:<br />
+								CustomerBilled
+								<br />ReviewCreated...</li>
+								<a target="_blank" href="http://verraes.net/2014/11/domain-events/">+info: Verraes </a>
+					</ul>
+				</section>
+				<section>
+					<h2>Event Source</h2>
+						<img height="430" data-src="./img/event-source.png" alt="cqrs">
+				</section>
+
+				<section>
+					<h2>Event Source</h2>
+						<img height="430" data-src="./img/event-sourcing.png" alt="cqrs">
+				</section>
+
+				<section>
+					<h2>Event Source</h2>
+					<p>Advantages:</p>
+					<ul>
+						<li>Complete Rebuild</li>
+						<li>Temporal Query</li>
+						<li>Event Replay</li>
+					</ul>
+					<p>Clasic example: CVS.<br /></p>
+				</section>
+				
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+				</section>
+
 			</div>
+
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
+
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				controls: true,
+				progress: true,
 				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
 		</script>
+
 	</body>
 </html>
