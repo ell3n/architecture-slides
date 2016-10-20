@@ -132,7 +132,7 @@
 					<section>
 						<h2>Layered Architecture</h2>
 						<a>
-							<img height="430" data-src="img/arquitectura.gif" alt="layers">
+							<img height="600" data-src="img/arquitectura.gif" alt="layers">
 						</a>
 					</section>
 					
@@ -158,7 +158,7 @@
 							<li>Performance (mostly for strict layering and many layers)</li>
 							<li>Coupling with data</li>
 						</ul>
-						<a href="#/2">
+						<a href="#/4">
 							<img width="50" data-src="./img/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
 						</a>
 					</section>
@@ -169,16 +169,13 @@
 				<section>
 					<section>
 						<h2>SOA</h2>
-						<p>Service-oriented architecture is a style of architecture based on service. A service is a well-defined and self-contained functionality. In this architecture, different services communicate with each other to perform some activity. These services are loosely-coupled i.e., a service need not know the technical details of another service that it is interacting with. Basically, SOA consists of a service consumer and a service provider. The former requests for some service while the latter executes the service and returns the result for the request. While communicating, the service provider and the consumer both adhere to a <b>pre-defined protocol</b>.
+						<p style="text-align:left;width:1200px;margin-left:-100px;">
+							Service-oriented architecture is a style of architecture based on <b>service</b>.
+							<br /> A service is a well-defined and self-contained functionality. 
+							<br />In this architecture, different services communicate with each other to perform some activity. 
+							<br />These services are loosely-coupled i.e., a service need not know the technical details of another service that it is interacting with.
+							<br />While communicating, the service provider and the consumer both adhere to a <b>pre-defined protocol</b>.
 						</p>
-					</section>
-					<section>
-						<h2>SOA</h2>
-						<p>
-						</p>
-						<a>
-							<img height="430" data-src="./img/soa.png" alt="soa">
-						</a>
 					</section>
 					<section>
 						<h2>SOA VS LAYERED</h2>
@@ -204,7 +201,7 @@
 							<li>Not recomended for Real Time Applications</li>
 						</ul>
 						</p>
-						<a href="#/3">
+						<a href="#/5">
 							<img width="50" data-src="./img/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
 						</a>
 					</section>
@@ -229,9 +226,6 @@
 				</section>
 				<section>
 					<h2>Similitudes</h2>
-
-					<p><i>The most stable things are not dependent on less stable things that change more frequently.
-					<br />The layer more important and more stable is domain.</i>
 					<ul>
 						<li>Based on DDD principles</li>
 						<li>Independent of Frameworks. </li>
@@ -293,19 +287,40 @@
 						<footer><a href="https://goodenoughsoftware.net/2012/09/09/cqrs-is-not-an-architecture/">Greg Young</a></footer>
 					</blockquote>
 				</section>
-
 				<section>
-					<h2>Domain events</h2>
-					<ul>
-						<li>Signal that something has happened</li>
-						<li>Closely aligned to the Domain Model</li>
-						<li>Info should be minimal - avoid fat events</li>
-						<li>Are handled by a messaging system</li>
-						<li>They are in past tense:<br />
-								CustomerBilled
-								<br />ReviewCreated...</li>
-								<a target="_blank" href="http://verraes.net/2014/11/domain-events/">+info: Verraes </a>
-					</ul>
+					<section>
+						<h2>Strengthening your domain: Domain events</h2>
+						<blockquote>
+						<p>
+							As we move towards a fully encapsulated domain model, we may start to encounter a very critical word in our conversations with the domain experts: 
+							<br /><b>When</b>.
+							<br />That should be a signal to us that there is a potential event in our system
+						</p>
+						</blockquote>
+					</section>
+					<section>
+						<h2>Strengthening your domain: Domain events</h2>
+						<blockquote>
+						<p>
+							As we move towards a fully encapsulated domain model, we may start to encounter a very critical word in our conversations with the domain experts: 
+							<br /><b>When</b>.
+							<br />That should be a signal to us that there is a potential event in our system
+						</p>
+						</blockquote>
+					</section>
+					<section>
+						<h2>Domain events</h2>
+						<ul>
+							<li>Signal that something has happened</li>
+							<li>Closely aligned to the Domain Model</li>
+							<li>Info should be minimal - avoid fat events</li>
+							<li>Are handled by a messaging system</li>
+							<li>They are in past tense:<br />
+									CustomerBilled
+									<br />ReviewCreated...</li>
+									<a target="_blank" href="http://verraes.net/2014/11/domain-events/">+info: Verraes </a>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<h2>Event Source</h2>
@@ -331,14 +346,15 @@
 						<li>Temporal Query</li>
 						<li>Event Replay</li>
 					</ul>
-					<p>Clasic examples: CVS/Wiki.<br /></p>
+					<p>Clasic examples: CVS/Wiki.<br />
+					<a href="http://martinfowler.com/eaaDev/EventSourcing.html" target="_blank">Martin fowler</a></p>
 					
 				</section>
 				<section>
 					<h2>Event Source</h2>
 					<p>Disadvantages:</p>
 					<ul>
-						<li>Queries &and; reports not allowed from event stream -> create optimised read models from events</li>
+						<li>Queries &amp; reports not allowed from event stream -> create optimised read models from events</li>
 						<li>Complete Rebuild can be slow</li>
 						<li>Exponential growth of data events -> Snapshotting</li>
 						<li>Buggy commands inconsistency -> Versioning</li>
