@@ -182,8 +182,7 @@
 				<section>
 					<h2>Differences</h2>
 					<ul>
-						<li>Hexagonal focuses on Domain and ports/adapters to connect with outside</li>
-						<li>Onion focuses on Application services to connect with outside</li>
+						<li>Onion focuses on Application services to connect with outside and structures de domain on three different layers</li>
 					</ul>
 				</section>
 
@@ -230,6 +229,12 @@
 					<h2>Event Source</h2>
 						<img height="430" data-src="./img/event-sourcing.png" alt="cqrs">
 				</section>
+				<section>
+					<h2>Event Source</h2>
+					<p>Interesting Example: <a href="https://github.com/LukasGasior1/event-sourced-dice-game" target="_blank">Dice game</a></p>
+
+						<img height="430" data-src="https://raw.githubusercontent.com/LukasGasior1/event-sourced-dice-game/master/doc/diagram.png" alt="cqrs">
+				</section>
 
 				<section>
 					<h2>Event Source</h2>
@@ -239,10 +244,19 @@
 						<li>Temporal Query</li>
 						<li>Event Replay</li>
 					</ul>
-					<p>Clasic example: CVS.<br /></p>
+					<p>Clasic examples: CVS/Wiki.<br /></p>
+					
 				</section>
-				
-
+				<section>
+					<h2>Event Source</h2>
+					<p>Disadvantages:</p>
+					<ul>
+						<li>Queries &and; reports not allowed from event stream -> create optimised read models from events</li>
+						<li>Complete Rebuild can be slow</li>
+						<li>Exponential growth of data events -> Snapshotting</li>
+						<li>Buggy commands inconsistency -> Versioning</li>
+					</ul>
+				</section>
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 				</section>
