@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Software Architecture in DDD</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -62,7 +62,7 @@
                     </section>
 
                     <section>
-                        <h2>BIG BALL OF MUD</h2>
+                        <h2>BBBOM!</h2>
 
                         <p>Brian Foote and Joseph Yoder</p>
                         <p>PLoP 97</p>
@@ -76,49 +76,8 @@
                             A BIG BALL OF MUD is haphazardly structured, sprawling, sloppy, duct-tape and bailing wire,
                             spaghetti code jungle.
                         </blockquote>
-                    </section>
-
-                    <section>
-                        <ul>
-                            <li>BIG BALL OF MUD</li>
-                            <li>THROWAWAY CODE</li>
-                            <li>PIECEMEAL GROWTH</li>
-                            <li>KEEP IT WORKING</li>
-                            <li>SHEARING LAYERS</li>
-                            <li>SWEEPING IT UNDER THE RUG</li>
-                            <li>RECONSTRUCTION</li>
-                        </ul>
-                    </section>
-
+                    </section>      
 				</section>
-
-                <section>
-
-                    <section>
-                        <h2>Architecture Patterns for Business Systems</h2>
-                        <p>Lorraine L. Boyd</p>
-                        <p>PLoP 97</p>
-                    </section>
-
-                    <section>
-                        <h2>Pattern Name: Online Engineering Model</h2>
-                        <img src="img/1-online-engineering.png">
-                    </section>
-                    <section>
-                        <h2>Pattern Name: Messaging Engineering Model</h2>
-                        <img src="img/2-messaging-engeneering.png">
-                    </section>
-                    <section>
-                        <h2>Pattern Name: Batch Engineering Model</h2>
-                        <img src="img/3-batch-engeneering.png">
-                    </section>
-                    <section>
-                        <h2>Pattern Name: Stream IO Engineering Model</h2>
-                        <img src="img/stream-io-engeneering.png">
-                    </section>
-
-                </section>
-
 				<section>
 					<section>
 						<h2>Layered Architecture</h2>
@@ -207,8 +166,16 @@
 					</section>
 				</section>
 				<section>
-						<h2>Dependency Inversion Principle</h2>
-						<p></p>
+					<section>
+							<h2>Dependency Inversion Principle / Inversion of Control</h2>
+							<p></p>
+					</section>
+					<section>
+							<h2>Dependency Inversion Principle</h2>
+							<blockquote>Ayuda a mantener nuestro código totalmente desacoplado. <br />Dependemos de abstracciones en vez de implementaciones concretas.
+
+</blockquote>
+					</section>
 				</section>
 			
 				<section>
@@ -299,16 +266,6 @@
 						</blockquote>
 					</section>
 					<section>
-						<h2>Strengthening your domain: Domain events</h2>
-						<blockquote>
-						<p>
-							As we move towards a fully encapsulated domain model, we may start to encounter a very critical word in our conversations with the domain experts: 
-							<br /><b>When</b>.
-							<br />That should be a signal to us that there is a potential event in our system
-						</p>
-						</blockquote>
-					</section>
-					<section>
 						<h2>Domain events</h2>
 						<ul>
 							<li>Signal that something has happened</li>
@@ -359,6 +316,74 @@
 						<li>Exponential growth of data events -> Snapshotting</li>
 						<li>Buggy commands inconsistency -> Versioning</li>
 					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Planifying...Event Storming</h2>
+						<ul>
+							<li>Event Storming (or Model storming) is a way of starting your analysis from the outside and quickly explore complex business domains.</li>
+							<li>Invented by Alberto Brandolin </li>
+							<li><a target="_blank" href="http://ziobrando.blogspot.com.es/2013/11/introducing-event-storming.html">+info</a></li>
+						</ul>
+					</section>
+				
+					<section>
+						<h2>Event Storming</h2>
+						<img src="img/event-storm.png" />
+					</section>
+					<section>
+						<h2>Event Storming</h2>
+						<p>Key points:</p>
+						<ul>
+							<li>Invite right people</li>
+							<li>Unlimited modeling space</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Event Storming</h2>
+						<p>Secret weapons</p>
+						<img src="img/weapon1.png" />
+					</section>
+					<section>
+						<h2>Event Storming</h2>
+						<ul>
+						<li>Conquer first divide later</li>
+						<li>You don't know the size of the problem before exploring</li>
+						</ul>
+						<img src="img/size-big.png" />
+					</section>
+
+
+					<section>
+						<h2>Event Storming</h2>
+						<p>Secret weapons</p>
+						<p>Active collaboration, one person, one marker</p>
+						<img src="img/marker.jpg" />
+					</section>
+
+					<section>
+						<h2>Event Storming</h2>
+						<p>Secret weapons</p>
+						<img src="img/beer.jpg" width="300" />
+						<img src="img/donuts.jpg" width="300" />
+					</section>
+
+					<section>
+						<h2>Event Storming</h2>
+						<ul>
+							<p class="fragment fade-up">Powerful <p/>
+								<p class="fragment fade-up"  style="font-size:14px;">come up with a comprehensive model of a complete business flow in hours instead of weeks.</p>
+							<p class="fragment fade-up">Engaging <p/>
+								<p class="fragment fade-up"  style="font-size:14px;">Bring people with questions to do, and people with answers to give in the same room to build a model together</p>
+							<p class="fragment fade-up">Efficient <p/>
+								<p class="fragment fade-up"  style="font-size:14px;">The resulting model is perfectly aligned with Event Sourcing and Event Driven Architectures, and allows for a quick determination of Bounded Context and Aggregate boundaries and thereby also Service boundaries</p>
+							<p class="fragment fade-up">Easy<p/>
+								<p class="fragment fade-up"  style="font-size:14px;">Ultra-simple notation. No complex UML</p>
+							<p class="fragment fade-up">Fun<p/>
+								<p class="fragment fade-up"  style="font-size:14px;">People are energized and deliver more than expected</p>
+						</ul>
+					</section>
 				</section>
 				<section style="text-align: left;">
 					<h1>THE END</h1>
